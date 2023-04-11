@@ -282,14 +282,35 @@ Day - 2 | 11th Apr. 2023
 			1. Create AWS Free - Tier Account.
 			2. github Account 
 			3. dockerhub Account 
+						
+			GITHUB Account Creation:
+				https://github.com/  				===> Remote GIT Repository (Collection of Files & Folders)
 			
+			AWS Account Creation:
+				https://aws.amazon.com/console/  	===> Create AWS Account				
+					Valid Email 
+					Valid Mobile number
+					Valid Credit/Debit Card ==> Should be enabled with International Transaction!
+					
+			DockerHub Account Creation:
+				https://hub.docker.com/
+
 			Tools ::
 			
-			Visual Studio Code :
-			SSH Clients :	
-				MobaXterm		(Windows)
-				Putty			(Mac)
-				
-				
-			GITHUB Account Creation:
-				https://github.com/  ===> Remote GIT Repository (Collection of Files & Folders)
+				Visual Studio Code :
+					https://code.visualstudio.com/download
+					
+				SSH Clients :	
+					MobaXterm		(Windows)
+						https://mobaxterm.mobatek.net/download.html
+						
+					Putty			(Mac)
+						https://www.putty.org/
+						https://www.ssh.com/academy/ssh/putty/mac	
+
+				Install GIT :			
+					https://git-scm.com/downloads
+			
+	Next :
+	
+		Version Control System using GIT
