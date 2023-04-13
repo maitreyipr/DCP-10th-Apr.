@@ -1,0 +1,557 @@
+
+DCP - 10th Apr. 2023 - 7AM IST to 9AM IST
+
+
+########################
+Day - 1 | 10th Apr. 2023
+########################
+
+	DevOps Introduction!
+			
+		Overview ::::
+			
+		What is DevOps ???
+			
+		All about Sofware Development Strategy!!!!
+		
+		
+		SDLC --> Software Development Lifecycle!
+		
+			Requirement Analysis
+			Design
+			Development
+			Test
+			Implementation 
+			Monitoring/Maint..
+	
+		Waterfall Model.		Linear Approach.
+		
+			Requirement Analysis
+			Design
+			Development
+			Test
+			Implementation/Deployment 
+			Monitoring/Maint..
+			
+		Project1 :: Waterfall Model 6month
+		
+		Project2
+		
+			Requirement Analysis
+			Design
+			Development
+			Test
+			Implementation/Deployment 
+			Monitoring/Maint..
+			
+			
+		Agile Methodologies
+		
+		Modules -- Iterations
+		
+		Project: Online User Registration System
+		
+			Sign-up
+			Sign-in
+			Enrole for the product
+		
+		Iteration 1 : Sign-up
+			Requirement Analysis
+			Design
+			Development
+			Test
+			Implementation/Deployment 
+			Monitoring/Maint..
+
+		Iteration 2 : Sign-In
+			Requirement Analysis
+			Design
+			Development
+			Test
+			Implementation/Deployment 
+			Monitoring/Maint..
+
+		Iteration 3 : New_Changes
+			Requirement Analysis
+			Design
+			Development
+			Test
+			Implementation/Deployment 
+			Monitoring/Maint..
+			
+		For Production Deployment 
+			
+		Continuous Integration 
+		
+		Continuous Delivery 
+		
+		Continuous Deployment 
+		
+	
+		DevOps --> Sofware Development Strategy!!!!
+		
+			Continuous Integration 
+			Continuous Delivery 		
+			Continuous Deployment
+			
+		E_Commerce == > www.amazon.com
+		
+		Sign-up		==> Developer1 --> developer the src code --> test the src code --> promote the changes for further testing --> Prod deployment		
+		Sign-In		==> Developer2 --> developer the src code --> test the src code --> promote the changes for further testing --> Prod deployment
+		Search 
+		Add to cart 
+		place the order 
+		make payment
+		confirm order 
+		track the order 
+		
+	
+		Application Architecture :::
+		
+			Monolith Application Architecture
+			
+			
+			Micro Service based Application Architecture
+	
+
+	Service	:::
+	
+		Sign-up		==> Developer1 --> developer the src code --> test the src code --> promote the changes for further testing --> Prod deployment		
+		Sign-In		==> Developer2 --> developer the src code --> test the src code --> promote the changes for further testing --> Prod deployment
+		Search 
+		Add to cart 
+		place the order 
+		make payment
+		confirm order 
+		track the order 			
+			
+			
+		
+		Tele-Comm :::
+		
+			Tele-Comm SP1 -->	Introduce a new plan / offer 
+			Tele-Comm SP2 -->	Introduce a new plan / offer 
+			
+			
+		Examples ::::
+
+			Continuous Delivery :
+			
+			Banking Systems 
+			Finace / INS 
+			
+			Production Deployment Window ::: 4hrs and 6hrs. Non-Business hours 
+			Manual Approvals from all the stake holders 
+			
+			
+			Continuous Deployment : 
+			
+			Amazon.com 
+			Netflix 
+			Facebook 
+			
+		DevOps - Strategy / Process 
+		
+		
+			Speed up the product development to deployment!
+			
+			Team ::
+			
+				Infra-Structure Team 		-- Provision infra - Tools 
+				Dev Team 					-- Improve the productivity 
+				Testing Team
+				Release Management 
+				Prod Support Team 
+				Prod Monitoring Team 
+				Security Team 
+				
+				
+			DevOps Team :::
+			
+			What is DevOps ?
+			
+				DevOps is a Software Development strategy which promotes collaboration between Development and Operations Teams to achieve Continuous Integration & Continuous Delivery/Deployment in more automated fashion.
+
+			What are the various Stages of DevOps ?
+			
+				Continuous Development ::		===> 
+					IDE, Co
+					Tradition process :: Code, Build (Compile & Create artifacts) perform Unittesting, promote the code to testing environments manually)					
+					Thru DevOps Automation :: CI/CD -- > Build (Compile & Create artifacts) perform Unittesting, promote the code to testing environments automatically)
+				Continuous Integration
+					promote the code to testing environments automatically
+				Continuous Testing
+					Continuous Testing --> Test automation tools -- > Test data, test scenarios, test cases 
+					
+				Continuous Delivery		--> Will enforce manual approval from all stake holders before production release 
+				
+				Continuous Deployment	--> No Manual approvals need for production release
+				
+				Continuous Monitoring  --> Monitoring Prod Environment
+
+
+				Feedback.
+				
+				Continuous IMPROVEMENT 
+			
+			DevSecOps ==> 
+			
+			What are the various DevOps Tools ?
+		
+########################
+Day - 2 | 11th Apr. 2023
+########################
+
+			DevOps ::
+			
+				People 
+				Strategy / Process 
+				Tools 
+				
+			DevOps - Associates , Engg., Lead , Architects , Consultants 
+			
+			
+			What are the various DevOps Tools ?
+			
+				Continuous Development ::		
+					===> IDE - Eclipse based IDEs, Visual Studio Code, Pycharm, Intellij, Vstudio
+							GIT -- SCM 
+							
+					Application Build ==> Is a process of compiling the source code & Creating Artifacts (binaries - 0 & 1s)
+										*.war *.jar *.exec *.dll files
+					
+					Tradition process :: Code, Build (Compile & Create artifacts) perform Unittesting, promote the code to testing environments manually)	
+					
+					Thru DevOps Automation :: CI/CD -- > Build (Compile & Create artifacts) perform Unittesting, promote the code to testing environments automatically)
+					
+				Continuous Integration
+					===> Jenkins, Maven, ant, Gradle  
+					
+					promote the code to testing environments automatically
+				Continuous Testing
+					===> Jenkins, Testing Tools - Junit, TestNG, Selenium
+					Continuous Testing --> Test automation tools -- > Test data, test scenarios, test cases 
+					
+				Continuous Delivery		--> Will enforce manual approval from all stake holders before production release 
+					===> Jenkins, Tomcat/Nginx, Ansible, Docker, Kubernetes 
+				
+				Continuous Deployment	--> No Manual approvals need for production release
+					===> Jenkins, Tomcat/Nginx, Ansible, Docker, Kubernetes
+				
+				Continuous Monitoring  --> Monitoring Prod Environment
+					===> Jenkins, Promethes/Grafana/Splunk/Nagios/AppDynamics
+					
+					Infra-Structure
+						:	Promethes/Grafana/Splunk/Nagios/					
+					Applications 
+						:	AppDynamics
+
+
+				Continuous IMPROVEMENT 
+				
+				
+				Plan ==> ALM Tools --> Application Lifecycle Management Tools - Jira, Az Boards
+				
+				
+				Jenkins ==> Build Orchestration Tool
+				bamboo
+				gitlab-ci
+				az-pipeline
+				aws-codepipeline
+				
+				
+			Environments ::::
+			
+			Non-Prod Environments												Prod Environment
+			
+			Dev 
+			Build 
+			Testing 
+				QA 
+				UAT 
+				Pre-Prod 
+				Staging 							=====>						Prod Environment
+					
+			
+			Servers -- Computing Devices --> Virtual Machines ( Linux / Windows )
+			
+			Cloud Platform -- AWS / Azure / GCP
+			
+			AWS - Cloud Platform 
+			
+			1. Create AWS Free - Tier Account.
+			2. github Account 
+			3. dockerhub Account 
+						
+			GITHUB Account Creation:
+				https://github.com/  				===> Remote GIT Repository (Collection of Files & Folders)
+			
+			AWS Account Creation:
+				https://aws.amazon.com/console/  	===> Create AWS Account				
+					Valid Email 
+					Valid Mobile number
+					Valid Credit/Debit Card ==> Should be enabled with International Transaction!
+					
+			DockerHub Account Creation:
+				https://hub.docker.com/
+
+			Tools ::
+			
+				Visual Studio Code :
+					https://code.visualstudio.com/download
+					
+				SSH Clients :	
+					MobaXterm		(Windows)
+						https://mobaxterm.mobatek.net/download.html
+						
+					Putty			(Mac)
+						https://www.putty.org/
+						https://www.ssh.com/academy/ssh/putty/mac	
+
+				Install GIT :			
+					https://git-scm.com/downloads
+			
+	Next :
+	
+		Version Control System using GIT
+
+########################
+Day - 3 | 12th Apr. 2023
+########################
+
+		Version Control System using GIT!
+		
+			-	New Requirement :::
+					Code --> Source Code development 
+					build 
+					Create Artifacts 
+					Unit Testing
+
+			Developer1 :::: java Web application :::
+			
+			index.jsp 
+				
+				<html>
+				asdf
+				sd
+				fs
+				df
+				sdf
+				scenariosf
+				scenariosdf
+				</html>
+		
+			saved ==> index.jsp , unit testing 
+			
+			index.jsp 
+				
+				<html>
+				asdf
+				sd
+				fs
+				df
+				sdf
+				scenariosf
+				scenariosdf
+				asdfasdf
+				ds
+				af
+				dataf
+				asdf
+				</html>
+				
+			saved ==> index.jsp , unit testing 
+			
+			1....10 changes 
+
+				<html>
+				asdf
+				sd
+				fs
+				df
+				sdfsafasdf
+				asdfdf
+				asdff
+				sd
+				scenariosf
+				scenariosdf
+				asdfasdf
+				ds
+				af
+				dataf
+				asdf
+				</html>
+				
+		Track the Changes.
+		Version Control the Changes.
+		
+		index.jsp_v1.0 					5 lines code 
+		index.jsp_v1.1 					+5 lines code 
+		index.jsp_v1.2 					+5 lines code 
+		index.jsp_v1.3 					+5 lines code   ===> QA Tesing ===> UAT Testing ==> Prod_Envi.
+		
+		Deploy ===> Deployment window. 4 - 6hrs 
+		
+			- Fix the issue 
+			- Revert the changes
+			
+		index.jsp_v1.3 				to index.jsp_v1.2 
+		
+		index.jsp 
+		index.jsp 
+		index.jsp 
+		index.jsp 
+		
+		Tags / Version_Number / Commit_IDs 
+		
+			jdk 1.7 / 1.8 (Release ID/Tag)  
+			
+			incremental changes on 1.8 version --- 1..100
+			
+			jdk 1.9 
+		
+		Version Control System like GIT 
+
+			-	Track the Changes.
+			-	Version Control the Changes.
+			
+			Types :
+			
+				Local Version Control System 
+				Centralized VCS 
+				Distributed VCS 
+				
+		
+		How to work on Distributed VCS :::	
+		
+		GIT - is Open Source Distributed VCS.
+			
+		
+		index.html ===> 
+		
+			rec1
+			rec2
+			rec3 
+			
+		commit -- commit_ID1
+				
+		
+		index.html ===> 
+		
+			rec1
+			rec2
+			rec3 
+			rec4
+			rec5
+
+		commit -- commit_ID2
+		
+		commit -- commit_ID2
+		
+		parallel development -- Branching Techniques
+		
+		GIT : 		
+			Open Distributed VCS 
+			Used to Version Control the changes 
+			Used to Track the Changes 
+			Used to perform parallel Development 
+			
+		
+		Working on GIT 
+		
+			Install Git ==> Window/Linux/Mac 
+			
+			Git File Workflow :::
+			
+			Local Machine (Local GIT Repository)									Remote Server (Remote GIT Repository)
+			
+			Working Directory  --> Staging Area --> Local Repository				Remote Repository
+			
+			
+		Project ::::
+		
+			1. New Project :	
+			
+				Developed in Local Dev Machine (Local Repo)		==> 	Remote Repo. 
+				
+				
+			2. Change Requests 
+			3. Bug fixing 	
+
+			
+			Remote Repo  ===> Local Repo. ==> Make necessary Changes ==> Push the changes back to Remote Repo. 
+			index.html 
+			
+			
+		
+		git clone 		===> Copy/Clone the entire remote repo. to local (As per best practise - Should be one time activity)
+		git add			===> Used to add the changes from Working Dir. to Staging Area 
+		git commit 		===> Used to commit the changes from staging are to Local Repo.
+		
+		git push 		===> Used to push the changes from local repo. to remote repo.
+		
+		git fetch & git pull
+		===> Both git fetch & git pull are used to handle incremental changes from remote repo.
+		
+		git fetch 	==> Used to check if there is any incremental changes happened in the remote repo.
+						If there are any changes available, git fetch will just update the local repo. with that changes. 
+						But it will NEVER update the working directory.
+						
+		git pull 	==> Used to check if there is any incremental changes happened in the remote repo.
+						If there are any changes available, git pull will update the local repo. as well as the working directory with that changes.
+						
+						
+						
+		Remote Repo. 
+		
+			Project_javawebapp1
+				
+				*.java
+				*.jsp1
+				*.jsp2
+			
+			
+		
+		Local Repo. 
+		
+			*.jsp1 
+			
+			
+			fetch ===> *.jsp1 & *.jsp2 
+			
+			git checkout 
+			git merge to *.jsp1 
+			
+			
+			
+		index.html ==> 
+		
+		
+		Remote Repo. 
+		
+			index.html 		===> 10 lines 	--> 10kb
+			index.html 		===> +10 lines	--> 20kb
+			
+		Cloned this repo. 
+		
+		Local Repo  git pull (incremental Changes)
+			index.html 		===> 10 lines 	--> 10kb	
+								+10 lines	--> 10 kb
+			
+		clone again ::
+		
+		Local Repo 
+			index.html 		===> 20 lines 	--> 20kb		
+			
+			git fetch 
+			
+	
+		Install of GIT in Local Machine :::
+		
+		
+Summary :
+
+		GIT Fundamentals ::
+		
+		GIT Installation ::
+	
