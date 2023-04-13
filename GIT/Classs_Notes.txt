@@ -551,7 +551,349 @@ Day - 3 | 12th Apr. 2023
 		
 Summary :
 
-		GIT Fundamentals ::
-		
+		GIT Fundamentals ::		
 		GIT Installation ::
+
+########################
+Day - 4 | 13th Apr. 2023
+########################
+
+		GIT Local Repo.
+			Misc. GIT Commands
+			Branches 
+		
+		GIT Remote Repo 
+		
+		GIT BASH 	--> CLI 
+		GIT GUI 	--> GUI
+		
 	
+		Repository ==> Collection of files & Folders 
+		
+		
+		git init ---> Initialize local git repo. 
+						Create default branch - master / main
+						
+						
+		Local Machine :
+		
+		Working Dir 		Staging/Index Area 				Local Repo.		
+		
+		
+		Project :::
+		
+			index.jsp ---> CR# - Added login_func.
+			
+		-	Version Control 
+		-	Tracking 
+		
+		- 	Parallel Development (Branching)
+		
+		git config ::
+		
+		Local git Config. :
+		
+			git config user.name "Loksai"
+			git config user.email "loksai@xyz.com"
+
+		Global git Config. :
+		
+			git config --global user.name "Loksai"
+			git config --global user.email "loksai@xyz.com"
+			
+		Before the very first commit :: you should config. user.name & user.email 
+		
+		
+		git add <fileName>
+		git add *.doc 
+		git add <f1> <f2> <f3>
+		git add .
+		
+		
+		git init 
+		git add 
+		git commit					>>> move to remote repo  
+		
+		git rm -f <file_Name> 
+		git rm --cached <file_Name> 
+		
+		
+		rm file1.txt 			jus remove physical file 
+		git rm -f 
+		
+		ls 
+		
+		git status 
+		
+		git ls-files 
+		
+		git log 
+		git log --stat 
+		git log --oneline 
+		git log -3
+		
+		git show 
+	
+		Scenario1 :::
+		
+		git diff 			chk the diff between working dir and committed files 
+		
+		Scenario2 :::
+		
+		git diff --cached 	chk the diff between staging area and committed files 
+		
+		Scenario 3 :::
+		
+		git diff <commit_ID> <commit_ID>
+		
+		files :::
+		
+		git ls-files  ==> 
+		
+		git ignore!
+		
+		Project_Folder ::
+		
+			Java_web_appln.
+				src 
+					sample.java
+					signin.java			==> recv user_id & passwd and it interact with D_base -- (sql_query), credential 
+					signup.java 
+					index.jsp 
+				test 
+					sample.java 
+				contents
+					app_properties
+					envi.ts
+				credentials
+				secrets
+					
+			
+			git init 
+			
+			
+			git add 
+			git commit 					==> push to remote repo!
+			
+			
+			Java_web_appln/dir1/sdir1
+			
+			dir/sdir1
+
+
+Summary ::::
+			
+  501  cd d:
+  502  mkdir DCP-10thApr
+  503  cd DCP-10thApr/
+  504  pwd
+  505  mkdir samplerepo1
+  506  cd samplerepo1/
+  507  clear
+  508  git init
+  509  ls
+  510  ls -a
+  511  cd ..
+  512  mkdir samplerepo2
+  513  ls
+  514  cd samplerepo2
+  515  clear
+  516  ls
+  517  ls -a
+  518  git init
+  519  ls
+  520  ls -a
+  521  cd .git/
+  522  ls
+  523  clear
+  524  ls
+  525  ls -a
+  526  cd ..
+  527  ls
+  528  ls -a
+  529  clear
+  530  cd d:
+  531  cd DCP-10thApr/
+  532  ls
+  533  ls -a
+  534  cd samplerepo1
+  535  clear
+  536  echo "Hello"
+  537  echo "Record1" >> file1.txt
+  538  cat file1.txt
+  539  ls
+  540  git status
+  541  git add file1.txt
+  542  git status
+  543  git commit -m "Initial Commit Message"
+  544  git status
+  545  git log
+  546  cd ..
+  547  cd samplerepo2/
+  548  clear
+  549  ls
+  550  echo "rec1" >> file1.txt
+  551  git status
+  552  git add file1.txt
+  553  git status
+  554  git commit -m "CM1"
+  555  git log
+  556  echo "rec1" >> file2.txt
+  557  git status
+  558  git add file2.txt
+  559  git status
+  560  git commit -m "CM2"
+  561  git log
+  562  git config --global user.email "loksai@xyzz.com"
+  563  git status
+  564  echo "rec1" >> file3.txt
+  565  git status
+  566  git add file3.txt
+  567  git commit -m "CM3"
+  568  git log
+  569  echo "rec1" >> file4.txt
+  570  git add .
+  571  git commit -m "Added file4.txt "
+  572  git log
+  573  ls
+  574  echo "rec1" >> s1.java
+  575  echo "rec1" >> s2.txt
+  576  echo "rec1" >> s3.md
+  577  echo "rec1" >> s4.doc
+  578  echo "rec1" >> s5.doc
+  579  echo "rec1" >> s7.java
+  580  git status
+  581  git add s1.java
+  582  git status
+  583  git add *.doc
+  584  git status
+  585  git add .
+  586  git status
+  587  git commit -m "Created project files"
+  588  git status
+  589  clear
+  590  echo "rec1" >> q1.txt
+  591  git status
+  592  ls
+  593  git rm --cached q1.txt
+  594  clear
+  595  ls
+  596  ls
+  597  git status
+  598  git add .
+  599  git status
+  600  git rm --cached q1.txt
+  601  ls
+  602  git status
+  603  git add .
+  604  git rm -f q1.txt
+  605  ls
+  606  echo "asdf" >> w1.txt
+  607  git add .
+  608  rm w1.txt
+  609  ls
+  610  git status
+  611  clear
+  612  git status
+  613  git commit -m "asdfas"
+  614  ls
+  615  git ls-files
+  616  clear
+  617  git status
+  618  clear
+  619  cd ..
+  620  cls
+  621  clear
+  622  cd samplerepo1
+  623  ls
+  624  git log
+  625  git status
+  626  clear
+  627  echo "rec1" >> f1.txt
+  628  git add .
+  629  git commit -m "CM2"
+  630  echo "rec1" >> f2.txt
+  631  git add .
+  632  git commit -m "CM3"
+  633  echo "rec1" >> f3.txt
+  634  git add .
+  635  git commit -m "CM4"
+  636  echo "rec1" >> f4.txt
+  637  git add .
+  638  git commit -m "CM5"
+  639  echo "rec1" >> f5.txt
+  640  git add .
+  641  git commit -m "CM6"
+  642  clear
+  643  git log
+  644  git log --oneline
+  645  git log --oneline -2
+  646  git log -2
+  647  git log --stat
+  648  git log --stat -2
+  649  git log --oneline
+  650  git show 1bffc7a
+  651  ls
+  652  git status
+  653  cat f1.txt
+  654  echo "record2" >> f1.txt
+  655  git status
+  656  git diff
+  657  git add .
+  658  git diff
+  659  git diff --cached
+  660  git status
+  661  git commit -m "updated f1.txt"
+  662  git diff
+  663  git diff --cached
+  664  git log --oneline
+  665  git diff def916c 87dddba
+  666  git diff 87dddba def916c
+  667  clear
+  668  ls
+  669  git ls-files
+  670  git status
+  671  echo "rec1" >> s1.txt
+  672  ls
+  673  git ls-files
+  674  git status
+  675  git add .
+  676  git ls-files
+  677  touch w1.txt
+  678  vi w1.txt
+  679  cd ..
+  680  ls
+  681  cd samplerepo2/
+  682  ls -a
+  683  rm -rf .git/
+  684  ls
+  685  ls -a
+  686  clear
+  687  cd ..
+  688  mkdir samplerepo3
+  689  cd samplerepo3/
+  690  ls
+  691  git init
+  692  ls -a
+  693  clear
+  694  vi .gitignore
+  695  ls
+  696  ls -a
+  697  git status
+  698  git add .
+  699  git commit -m "Initial commit for .gitignore"
+  700  git statsu
+  701  git status
+  702  cat .gitignore
+  703  ls
+  704  echo "rec1" >> s1.txt
+  705  git status
+  706  echo "rec1" >> q1.doc
+  707  git status
+  708  echo "rec1" >> sample5.txt
+  709  git status
+  710  clear
+  711  clear
+  712  history
+  
+  
