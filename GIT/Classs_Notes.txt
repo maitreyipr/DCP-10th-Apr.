@@ -470,16 +470,13 @@ Day - 3 | 12th Apr. 2023
 			
 		Project ::::
 		
-			1. New Project :	
-			
+			1. New Project :
 				Developed in Local Dev Machine (Local Repo)		==> 	Remote Repo. 
-				
 				
 			2. Change Requests 
 			3. Bug fixing 	
-
 			
-			Remote Repo  ===> Local Repo. ==> Make necessary Changes ==> Push the changes back to Remote Repo. 
+				Remote Repo  ===> Local Repo. ==> Make necessary Changes ==> Push the changes back to Remote Repo. 
 			index.html 
 			
 			
@@ -897,3 +894,201 @@ Summary ::::
   712  history
   
   
+	GIT --> 
+	
+	GIT Client --> git bash 
+	
+	remote GIT 
+	
+	GIT Server --> 	Github			VM -- GIT --> GUI 
+					Gitlab 
+					Az Repo
+					AWS Code Commit 
+					Bitbucket
+	
+  
+########################
+Day - 5 | 14th Apr. 2023
+########################
+
+		GIT Misc.
+		
+			reset 
+			revert 
+			commits
+			
+			branching techiques 
+			remote repositories
+		
+		local repo. 
+		
+			commit --> 
+			
+			git reset ==> used to undo the commit(s) 
+							will update the commit history 
+							reset will remove the commits from the commit history.
+							Hard option removes the commits and the changes permanently.
+							reset will never create new commit point.
+			
+			HARD , MIXED* , SOFT 			
+			
+			git reset <option> <commit_ID> 
+			
+		git revert ::::
+		
+			git revert <commit_ID>
+		
+				revert will create new commit point.
+				can be used in shared repo.
+				at any point of time using the commit histroy we can get back the changes.
+				
+			Git Repo. are used for parallel Development 
+			
+				for multiple users .
+				
+				reset --> 
+			
+		prod - deployment  v1.3
+				v1.1
+				v1.2
+				
+				v1.3  == prod testing ==> 
+				try to fix (4 - 6 hrs)
+				
+				revert the changes 
+		
+		v1.3.2 ===> latest deployment 
+		v1.3.1 ===> reverted v1.3
+		v1.3			revert 
+		v1.2
+		v1.1
+		
+		v1.3.2 ===> reverted v1.3.1
+		v1.3.1 ===> reverted v1.3
+		v1.3			# revert 
+		v1.2
+		v1.1
+		
+		
+		git commit :
+		
+		
+		commits 
+		
+		git commit -m "CR# / REL# - Actual Message"
+		
+		planning !
+		
+		git commit --amend -m "ASDFASD"
+		
+		Git Branching Techniques !!!
+		
+			Parallel Development ::::
+			
+			
+			File1 ==> 
+			
+		git init :
+		
+			master --> cm1,cm2,cm3			==> PROD copy of src code. 
+				
+				feature_branch1 
+				
+		Git Branching Strategies ::::
+		
+		
+			master ---> cm1,cm2,cm3,f1cm1,f1cm2,f2cm1,f2cm2			===> Prod version
+			
+				Developer1 
+				
+					feature1 ---> cm1,cm2,cm3,f1cm1,f1cm2
+					feature2 ---> cm1,cm2,cm3,f2cm1,f2cm2			
+			
+_____________________________________________________________		
+		
+			master ---> cm1,cm2,cm3		
+
+				Integration_Branch
+				
+					Developer1 - cm1,cm2,cm3,f1cm1,f1cm2,f2cm1,f2cm2
+						feature1 ---> cm1,cm2,cm3,f1cm1,f1cm2
+						feature2 ---> cm1,cm2,cm3,f2cm1,f2cm2
+						
+					Developer2 - cm1,cm2,cm3,f1cm1,f1cm2,f2cm1,f2cm2
+						feature1 ---> cm1,cm2,cm3,f1cm1,f1cm2
+						feature2 ---> cm1,cm2,cm3,f2cm1,f2cm2
+						
+_____________________________________________________________
+
+			master ---> cm1,cm2,cm3	
+
+				hotfix-Branch
+
+				Realease_Branch 
+				
+					Integration_Branch1			Team1
+					
+						Developer1 - cm1,cm2,cm3,f1cm1,f1cm2,f2cm1,f2cm2
+							feature1 ---> cm1,cm2,cm3,f1cm1,f1cm2
+							feature2 ---> cm1,cm2,cm3,f2cm1,f2cm2
+							
+						Developer2 - cm1,cm2,cm3,f1cm1,f1cm2,f2cm1,f2cm2
+							feature1 ---> cm1,cm2,cm3,f1cm1,f1cm2
+							feature2 ---> cm1,cm2,cm3,f2cm1,f2cm2
+
+					Integration_Branch2			Team2
+					
+						Developer1 - cm1,cm2,cm3,f1cm1,f1cm2,f2cm1,f2cm2
+							feature1 ---> cm1,cm2,cm3,f1cm1,f1cm2
+							feature2 ---> cm1,cm2,cm3,f2cm1,f2cm2
+							
+						Developer2 - cm1,cm2,cm3,f1cm1,f1cm2,f2cm1,f2cm2
+							feature1 ---> cm1,cm2,cm3,f1cm1,f1cm2
+							feature2 ---> cm1,cm2,cm3,f2cm1,f2cm2
+
+					Integration_Branch3			Team3
+					
+						Developer1 - cm1,cm2,cm3,f1cm1,f1cm2,f2cm1,f2cm2
+							feature1 ---> cm1,cm2,cm3,f1cm1,f1cm2
+							feature2 ---> cm1,cm2,cm3,f2cm1,f2cm2
+							
+						Developer2 - cm1,cm2,cm3,f1cm1,f1cm2,f2cm1,f2cm2
+							feature1 ---> cm1,cm2,cm3,f1cm1,f1cm2
+							feature2 ---> cm1,cm2,cm3,f2cm1,f2cm2
+	
+
+			How to create Branches !!!
+			
+		
+			Merge 
+			
+			Merge Conflict :::
+			
+				When/How the Merge Conflicts occurs ????
+				
+				How to resolve this Merge Conflict ?
+				
+					1. Identify the file(s) that is causing the merge conflict. -- > done
+					2. Review the changes and decide whose changes has to be merged.
+					3. Add the changes and 
+					4. Commit the changes to the target Branch 
+					
+				We should avoid / prevent merge conflict!!!
+				
+					Review the changes before merge to avoid merge conflict.
+					
+					rebase ... 
+					pull ...
+					fetch ...
+				
+				
+			project 
+				signin.java ==> 
+				
+					dev1 -- email_validation
+					dev2 -- email_validation & User_Validation
+					
+					
+					execellent 1
+						good  	0
+					avg     	-1 
