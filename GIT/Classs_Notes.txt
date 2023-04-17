@@ -1068,6 +1068,7 @@ _____________________________________________________________
 				
 				How to resolve this Merge Conflict ?
 				
+				
 					1. Identify the file(s) that is causing the merge conflict. -- > done
 					2. Review the changes and decide whose changes has to be merged.
 					3. Add the changes and 
@@ -1092,3 +1093,165 @@ _____________________________________________________________
 					execellent 1
 						good  	0
 					avg     	-1 
+
+########################
+Day - 6 | 17th Apr. 2023
+########################
+
+		Working with git branches!!!!
+		
+		Merge :::
+			Git Rebase 
+			Git Squash
+			Cherrypick
+			
+		Git stash 
+		
+		Git Remote Repository Handling.
+		
+		
+		Git Rebase :::
+
+
+			Master : cm1,cm2,cm3 
+							cm1,cm2,cm3,f1cm1,f1cm2 -- Upon merge from feature1
+							
+							cm1,cm2,cm3,f2cm1,f2cm2,f1cm1,f1cm2
+							
+							cm1,cm2,cm3,f1cm1,f1cm2,f2cm1,f2cm2
+							
+			
+				feature1 : 
+					cm1,cm2,cm3,f1cm1,f1cm2
+				
+				git switch master
+				git merge feature1
+					
+				
+				feature2 :
+					cm1,cm2,cm3,f2cm1,f2cm2
+					
+				git rebase master 
+					cm1,cm2,cm3,f1cm1,f1cm2,f2cm1,f2cm2
+					
+				git switch master
+				git merge feature2	
+				
+				Rebase :::
+				
+				
+
+		Git Squash :::
+			
+					
+			Master : cm1,cm2,cm3 
+					cm1,cm2,cm3,f1cm1,f1cm2,f1cm3,f1cm4,f1cm5,f1cm6,......,f1c100
+					
+					cm1,cm2,cm3,feature1T1Commit
+					
+				feature1 : 
+					cm1,cm2,cm3,f1cm1,f1cm2,f1cm3,f1cm4,f1cm5,f1cm6,......,f1c100 - feature1T1Commit, f1cm1,f1cm2,......n, feature1T2Commit
+							
+				feature2 : 
+					cm1,cm2,cm3			
+					
+			
+			Git Squash - is a merge option used to combine more than one commits into one.
+			
+			Perform Squash ::
+			
+				Before merge ===> while working in current branch ::
+				
+					git rebase -i HEAD~5
+				
+				While Merging  ::
+				
+					git merge --squash feature1
+					git commit -m "Commit Message"
+				
+				
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			master ---> cm1,cm2,cm3				===> cm1,cm2,cm3,Rel_v1.0
+
+				hotfix-Branch
+
+				Realease_Branch 											===>	cm1,cm2,cm3,team1,team2		===> cm1,cm2,cm3,Rel_v1.0
+				
+					Integration_Branch1			Team1						===>	cm1,cm2,cm3,team1dev1changes,team1dev2changes	===> cm1,cm2,cm3,team1
+					
+						Developer1 - cm1,cm2,cm3,f1cm1,f1cm2,f2cm1,f2cm2 	===>	team1dev1changes
+							feature1 ---> cm1,cm2,cm3,f1cm1,f1cm2
+							feature2 ---> cm1,cm2,cm3,f2cm1,f2cm2
+							
+						Developer2 - cm1,cm2,cm3,f1cm1,f1cm2,f2cm1,f2cm2 	===>	team1dev2changes
+							feature1 ---> cm1,cm2,cm3,f1cm1,f1cm2
+							feature2 ---> cm1,cm2,cm3,f2cm1,f2cm2
+
+					Integration_Branch2			Team2						===>	cm1,cm2,cm3,team2dev1changes,team2dev2changes	===> cm1,cm2,cm3,team2
+					
+						Developer1 - cm1,cm2,cm3,f1cm1,f1cm2,f2cm1,f2cm2	===>	team1dev1changes
+							feature1 ---> cm1,cm2,cm3,f1cm1,f1cm2
+							feature2 ---> cm1,cm2,cm3,f2cm1,f2cm2
+							
+						Developer2 - cm1,cm2,cm3,f1cm1,f1cm2,f2cm1,f2cm2	===>	team1dev2changes
+							feature1 ---> cm1,cm2,cm3,f1cm1,f1cm2
+							feature2 ---> cm1,cm2,cm3,f2cm1,f2cm2
+			
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			
+			git cherry-pick team1dev1changes team1dev2changes
+			
+			git cherry-pick <commit_ID> <commit_ID>
+			
+		
+		Git stash :::
+		
+			master ::: cm1,cm2,cm3 
+			
+				feature1 ::: cm1,cm2,cm3,......... 100 changes to staging Area 
+				
+				Adhoc_Branch ::: asdfasdfasdf....
+				
+		
+				The git stash command enables you to switch branches without committing the current branch. "store something safely in a hidden place."
+				Sometimes you want to switch the branches, but you are working on an incomplete part of your current project. 
+				
+				You don't want to make a commit of half-done work. 
+
+				
+					Stash current work:
+					$ git stash
+
+					Saving stashes with a message: 
+					$ git stash save "<Stashing Message>"
+
+					Check the stored stashes: 
+					$ git stash list
+
+					Re-apply the changes that you just stashed 
+					$ git stash apply
+
+					Track the stashes and their changes: 
+					$ git stash show
+
+					Re-apply the previous commits: 
+					$ git stash pop
+
+					Delete a most recent stash from the queue: 
+					$ git stash drop
+
+					Delete all the available stashes at once: 
+					$ git stash clear
+
+					Stash work on a separate branch: 
+					$ git stash branch <branch name>
+
+
+				working Dir. 		Staging Area 			Local Repo 				
+				
+				stash == It is jus a temp are with in  GIT Directory - managed by git.
+
+Next :::
+			
+		Git Remote Repository Handling.		
+			
