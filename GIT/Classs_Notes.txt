@@ -215,7 +215,7 @@ Day - 2 | 11th Apr. 2023
 			
 				Continuous Development ::		
 					===> IDE - Eclipse based IDEs, Visual Studio Code, Pycharm, Intellij, Vstudio
-							GIT -- SCM 
+						GIT -- SCM 
 							
 					Application Build ==> Is a process of compiling the source code & Creating Artifacts (binaries - 0 & 1s)
 										*.war *.jar *.exec *.dll files
@@ -1250,8 +1250,128 @@ Day - 6 | 17th Apr. 2023
 				working Dir. 		Staging Area 			Local Repo 				
 				
 				stash == It is jus a temp are with in  GIT Directory - managed by git.
-
+		
 Next :::
 			
 		Git Remote Repository Handling.		
 			
+########################
+Day - 7 | 18th Apr. 2023
+########################
+
+		Git Remote Repository Handling
+		Jenkins 
+				
+	
+			GIT GUI --
+			
+			Visual Studio Code 			===> Remote Repo (github/gitlab/azrepo)
+			Eclipse Based IDEs 
+			
+		Working with Remote Repo. (GITHUB)
+		
+			How to create remote git repo.
+				how to work with remote branches & Merging 
+				
+			How to access it from local machine 
+				Clone
+				Fetch
+				pull 
+				push 
+				remote 
+
+
+		git clone 		===> Copy/Clone the entire remote repo. to local (As per best practise - Should be one time activity)
+		git add			===> Used to add the changes from Working Dir. to Staging Area 
+		git commit 		===> Used to commit the changes from staging are to Local Repo.
+		
+		git push 		===> Used to push the changes from local repo. to remote repo.
+		
+		git fetch & git pull
+		===> Both git fetch & git pull are used to handle incremental changes from remote repo.
+		
+		git fetch 	==> Used to check if there is any incremental changes happened in the remote repo.
+						If there are any changes available, git fetch will just update the local repo. with that changes. 
+						But it will NEVER update the working directory.
+						
+		git pull 	==> Used to check if there is any incremental changes happened in the remote repo.
+						If there are any changes available, git pull will update the local repo. as well as the working directory with that changes.
+							
+							git pull == fetch + merge 
+	
+		git clone == > 	shd have access to that repo.
+						shd have a valid clone url.
+						
+						Https 	: using password based auth.			--> token
+						SSH		: Passwordless auth.
+						
+				Create github Token 
+				
+			git clone https://github.com/LoksaiETA/dcp-10apr-testrepo1.git
+			
+				User ID  : <Github_Account_Name>				
+				Password : <Generated Token>
+				
+				
+		git remote -v 
+		
+		git remote add 
+		
+		git remote remove 
+
+https://github.com/LoksaiETA/dcp-10apr-testrepo1.git
+	
+		
+Next :::
+
+		Jenkins
+		
+		Jenkins --> Build Orchestration Tool.
+		
+			Using Jenkins ==> Automate the end-to-end CI/CD 
+			
+			Continuous Development ::		
+				===> IDE - Eclipse based IDEs, Visual Studio Code, Pycharm, Intellij, Vstudio
+					GIT -- SCM 
+						
+				Application Build ==> Is a process of compiling the source code & Creating Artifacts (binaries - 0 & 1s)
+									*.war *.jar *.exec *.dll files
+				
+				Tradition process :: Code, Build (Compile & Create artifacts) perform Unittesting, promote the code to testing environments manually)	
+				
+				Thru DevOps Automation :: CI/CD -- > Build (Compile & Create artifacts) perform Unittesting, promote the code to testing environments automatically)
+				
+		
+			Continuous Integration/Delivery/Deployment :::
+			
+				Jenkins Architecture ::
+						Client Server Architecture -> Master & Slave 
+						
+						
+				Jenkins Server (Master) 												VM
+							- Used to Create the Jenkins CICD Pipelines/Jobs/Projects
+							- Schedule these Jobs.
+							
+					Jenkins Slave1 :::  Build Java Application							VM
+						Install all the required build tools. Maven/Ant/Gradle
+						
+					Jenkins Slave2 :::  Build .Net Application							VM
+						Install all the required build tools. .net framework
+					
+					Jenkins Slave3 :::  Build Python Application						VM
+						Install all the required build tools. python
+					
+				
+			1. How to create the VMs in Cloud....
+			2. Mobaxterm 
+			
+				Connect to EC2 Instances :
+				
+					EC2 Instance Connect thru browser 
+					
+					SSH Clients :
+					
+						MobaXterm
+						Putty 
+						
+					SSH Remote connection using Terminal .
