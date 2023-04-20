@@ -1,0 +1,149 @@
+DCP-10th Apr. 
+
+
+20th April. 2023
+~~~~~~~~~~~~~~~~~~~~
+
+	Jenkins Free style Projects. 
+
+		console !
+
+	Jenkins Pipeline Projects ::
+
+		automate build/deployement/testing 
+
+	Process workflow ::
+	
+		Developers create the appln
+		Pushes the changes to remote git repo.
+		checkout the src code 
+		perform build 
+		create artifacts 
+		deploy to higher environment for further testing 
+
+	Java 
+	how the appln is build - which build tool they use to build 
+	maven - 
+
+		Maven Build Tool :
+
+			compile the scr code 
+			creates artifacts (binaries - *.war/*.jar)
+				
+			pom.xml		==> used to maintain the dependencies/plugins req. for build.
+
+			maven goal : test, build, clean, package,.......
+
+
+
+	How to Create Pipeline Projects ::
+
+
+		- Scripted Pipelines
+		- Declarative Pipelines 
+
+
+pipeline {
+    agent any
+
+    stages {
+        stage('SCM Checkout') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('Deploy to QA') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('Automated QA Test') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('Deploy to UAT') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('Deploy to PROD') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+    }
+}
+
+
+		How to work on Jenkins Pipeline Projects ???
+
+
+		Process :::
+
+		Jenkins Master	--> for scheduling the jobs to slave machines  
+			Slave1 	--> Actual build happens in slave machine. (Java)
+			Slave2 	--> Actual build happens in slave machine. (Java)
+
+		Jenkins Master & Slave Configurations ::
+
+			1. Master shd be ready. (jdk,jenkins)
+			2. Launch VM - Slave1
+				- Install git,jdk,maven 
+
+				- Create User - 
+				-	SSH based Authentication
+						key pair - private & public key
+			4. Add this slave node to Jenkins Master!
+
+			5. Create the cicd pipeline 
+
+			
+pipeline {
+
+    agent {
+        label 'slave1'
+    }
+
+    tools {
+        maven 'maven'
+    }
+
+    stages {
+        stage('SCM Checkout') {
+            steps {
+                echo 'Perform SCM Checkout'
+		git 'https://github.com/LoksaiETA/Java-mvn-app2.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Perform Maven Build'
+		sh "mvn -Dmaven.test.failure.ignore=true clean package"
+            }
+        }
+        stage('Deploy to QA') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+	
+	
