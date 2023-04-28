@@ -1,0 +1,475 @@
+
+Day -10 :::
+
+
+	Perfrom Automated Deployments!!!!
+
+		Deploy ::		copy the artifacts from build server to any target servers 
+
+	
+	Dev 
+	Build Envi.
+	Test 
+	QA,UAT,Stage		==> PROD Envir.
+	
+	Target servers / Hosted Servers - VM - Hardware
+		Install the Web Application server	- Nginx/Tomcat
+	
+
+	
+	How to Config. QA Server 
+				Install Tomcat run in port 8080
+					pre-req. is jdk
+				create user for tomcat
+				create ssh keys
+
+	Jenkins_Master
+		Jenkins_Slave
+	QA_Server
+	
+
+
+	Deployment : copy the artifacts from build server to any target QA_servers 
+
+		*war. in slave Machine
+
+	Slave: target/*.war			==> 		/opt/tomcat/webapps/*.war
+		
+
+
+	Build triggers!!!   Scheduling 
+
+	
+		Build Periodic :: -- Used to trigger the job for every 1 hr or 2. 
+
+		Poll SCM ::
+			Used to trigger the job for every 1 hr. only if there is any changes in source code repo. 
+
+		Github Webhook ::
+			Used to trigger the job for every changes happened in source code repo.. 
+
+	install git in jenkins master
+
+http://13.233.112.45:8080/github-webhook/
+http://3.6.37.198:8080/github-webhook/
+
+
+
+Non_Prod 				PROD 
+
+dev
+qa
+uat
+staging					prod_servers
+
+Jenkins Job :
+
+Start_Job:	Task -- will start the servers at 9AM 	- Build periodic.
+Stop_Job:	Task -- will stop the servers at 9PM
+
+CLI --> awscli -> groovy/shell/python
+
+Backup of my workspace 
+
+Cleanup of my workspace
+
+Test Cycles :::: Test job for every 4hrs. 8am / 12noon
+
+8am -- 12 noon
+
+
+#Github webhook to automatically trigger build pipeline!
+
+#Goto Github Repository setting, 
+Select webhook, 
+
+Click Add Webhook
+
+Enter Jenkins Master URL. eg.:
+http://<public-IP>:8080/github-webhook/
+
+http://35.154.44.76:8080/github-webhook/
+
+Choose the push event and save the webhook configuration
+
+**********************************************************************************
+
+Build Periodic:
+want to trigger a build for every one hour only
+
+
+Intall GIT on your Jenkins Master!
+
+	Poll SCM:
+	want to trigger a build for every one hour only if there is any commit happened in the src repo 
+
+	Github Webhook!!
+	want to trigger a build for every commit happened in the src repo 
+
+DEV envi.
+
+	Dev1 == commit to his src code repo --->>
+	to perform some unit testing 
+	
+	His test cycle runs every 6 hrs.
+	
+		- Code promotion to QA 
+		
+	poll SCM !
+	
+		Done with QA Testing src code has been updated the the required commit 
+		
+	GITHUB Webhook !
+
+
+
+
+
+
+
+
+############
+DAY - 11
+############
+		How to work with CI/CD pipelines
+
+
+		Publish over ssh plugin ;;
+		
+			Jenkins Archi :
+
+				Master
+					slave 
+				QA
+				UAT
+				Prod 
+
+
+				Ansible
+				Docker 
+
+				Kubernetes Clusters
+
+		
+
+		Publish over ssh plugin		==> We can trasfer the files / artifacts to target servers
+
+		Configure Publish over ssh plugins
+			- Add the target server details using SSH
+
+		Create CICD Pipeline 
+
+
+		sshPublisher(publishers: [sshPublisherDesc(configName: 'QA_Server_DCP', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '.', remoteDirectorySDF: false, removePrefix: 'target/', sourceFiles: 'target/mvn-hello-world.war')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Github webhook to automatically trigger build pipeline!
+
+#Goto Github Repository setting, 
+Select webhook, 
+
+Click Add Webhook
+
+Enter Jenkins Master URL. eg.:
+http://<public-IP>:8080/github-webhook/
+
+http://35.154.44.76:8080/github-webhook/
+
+Choose the push event and save the webhook configuration
+
+**********************************************************************************
+
+Build Periodic:
+want to trigger a build for every one hour only
+
+
+Intall GIT on your Jenkins Master!
+
+	Poll SCM:
+	want to trigger a build for every one hour only if there is any commit happened in the src repo 
+
+	Github Webhook!!
+	want to trigger a build for every commit happened in the src repo 
+	
+Email Notification!
+
+
+
+
+
+
+
+
+
+
+Email Notification Plugins :::
+
+SMTP Server :
+smtp.gmail.com
+
+SMTP Authentication
+
+SMTP Port :: 465
+
+Login to Gmail :::
+
+Click Account Settings
+
+Security 
+
+	Create Application Token for your Email Account 
+	
+	This token acts as a password.
+	
+		- 	Login to ur GMail Account
+		-	Go to Manage Account
+		- 	Security Tab 
+			Config 
+				MFA 		-- give ur mobile# 
+				Add Appln. Token
+				16 bytes token 
+	
+dsexlqykcfaiigou
+
+
+
+pipeline {
+    
+    agent {
+        label 'slave1'
+    }
+
+    tools 
+    {
+        maven 'maven'
+    }
+    
+    stages {
+        stage('SCM-Checkout') 
+	{
+            steps {
+                // Get some code from a GitHub repository
+                git 'https://github.com/LoksaiETA/Java-mvn-appjhvjvh2.git'
+
+            }
+              post {
+                failure {
+                  sh "echo 'Send mail on failure'"
+                  mail body: '"Please go to ${BUILD_URL} and verify the build"', cc: '', from: '', replyTo: '', subject: '"Job \'${JOB_NAME}\' (${BUILD_NUMBER}) is waiting for input",', to: 'loksai.clouduser@gmail.com'
+                }
+              }
+	}
+        stage('Build') 
+	{
+            steps {
+                // Run Maven on a Unix agent.
+                sh "mvn -Dmaven.test.failure.ignore=true clean package"
+            }
+              post {
+                failure {
+                  sh "echo 'Send mail on failure'"
+                  mail to:"dev_team@asdf.com,test_team@asdf.com", from: 'dummyid@gmail.com', subject:"FAILURE: ${currentBuild.fullDisplayName}", body: "Build failed."
+                }
+              }
+	}
+}
+}
+
+
+
+
+
+
+	scm checkout	- build	- unit testing 	- deploy to qa	- qa test - deploy to uat 	- uat test 	- deploy to prod - prod test
+
+	User - Access.
+
+
+Summary :::	
+	Jenkins Installion & Master/slave node cofig.
+	create the jobs
+	Manages Jenkins 
+		plugins
+		credentials, User Authorization 
+		
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+	Ansible :::: Config Mgmt Tool --> 
+
+
+		Infra Team --> 	Server Provisioning! -->>> 100 servers???
+				Config the servers
+		
+		Eg.: QA_Server ::
+			Test the applications
+			Tools??? --> jdk, tomcat
+
+	Dynamic Testing :: 
+	
+			IAC --> Infrastructure As Code --> Tools --> terraform 	--> Used to provision the servers (100)
+
+			IAC --> Infrastructure As Code --> Tools --> Ansible	--> Used to Config the servers (100)
+
+
+
+Pipeline: 
+
+	scm checkout	--> build	--> created artifact --> unit testing 	- deploy to qa	- qa test
+
+
+
+
+	scm checkout	--> build	--> created artifact --> unit testing	--> Provision QA_Server	--> Config QA_Server	--> deploy to qa	--> qa test
+	
+
+Pipeline_Job1 : 
+
+
+	Provision QA_Server	--> 	Config QA_Server
+
+Pipeline_Job2 : 
+
+	scm checkout	--> build	--> created artifact --> unit testing	--> deploy to qa	--> qa test
+
+
+
+
+
+
+Login to slave machine :
+
+	sudo -i
+
+	sudo - devopadmin
+
+	ls -a
+
+	rm -rf .ssh/
+	
+	ssh-keygen -t rsa -b 4096 -m PEM
+
+	id_rsa & id_rsa.pub
+	cat id_rsa.pub >> authorized_keys
+
+
+Ansible :::
+
+		Remote server Authentication!!!
+
+		Jenkins_Master & Slave ==> are owned by DevOps Team.
+
+		Ansible Controller :: owned by the DevOps Team / Infra Team 
+
+			Target Machines ::	dev, test, hosted server, db server, mail server
+ 
+
+		hosts ==> default inventory file.
+
+
+
+		AC -- 	AN1
+			AN2
+
+
+900
+
+
+
+
+[testnodes]
+samplenode1 ansible_ssh_host=172.31.6.133 ansible_ssh_user=ansibleadmin
+
+samplenode2 ansible_ssh_host=172.31.2.73 ansible_ssh_user=ansibleadmin
+	
+
+
+
+[DB_Servers]
+
+dbserver1 ansible_ssh_host=172.31.6.133 ansible_ssh_user=ansibleadmin
+
+dbserver2 ansible_ssh_host=172.31.2.73 ansible_ssh_user=ansibleadmin
+
+dbserver3 ansible_ssh_host=172.31.6.133 ansible_ssh_user=ansibleadmin
+
+dbserver4 ansible_ssh_host=172.31.2.73 ansible_ssh_user=ansibleadmin
+
+[Test_Servers]
+QAServer1 ansible_ssh_host=172.31.6.133 ansible_ssh_user=ansibleadmin
+
+
+
+		Working with Ansible :::
+
+			Ansible Adhoc Commands 			
+			Ansible Playbooks
+
+
+DAY - 13 - 26th Apr.
+~~~~~~~~~~~~~~~~~~~~
+
+	Ansible Adhoc Commands!
+
+	Ansible Playbook;		written using yaml.
+					key value pair
+
+		playbook.yaml
+
+		play1
+			host 
+			task 
+				modules
+					arugument
+
+		play2
+			host 
+			task 
+				modules
+					arugument
+
+
+
+
+
+DAY - 14 - 27th Apr.
+~~~~~~~~~~~~~~~~~~~~
+
+
+		Playbooks ::::
+			Variables 
+			register - setup 
+			Handle run time inputs
+			How to write playbook for installation or startup of any service 
+			loop
+			Conditions
+			Handlers
+			Stop/Start of Services 
+			Ansible Roles
