@@ -658,57 +658,111 @@ DAY - 15 - 28th Apr.
 
 
 
+	Docker Volume ::::
+
+		Containers --> 
+		Task/Application ==> 	
+			stateless Appln. 
+				
+			stateful
+				java_web_appln.
+					container1 ==> log_file,reports,files 
+
+				Docker Volume ==> 
+					Mapping the Host Volume with Container Volume.
+
+
+						
+	Port Mapping/Binding
+		java_web_appln.		
+
+	
+	How to create Docker Images
+		- docker commit
+		
+		centos ==> 		
+
+
+		- docker build
+
+	Application Build/deployment Workflow :::
+		
+		code
+		Application_build 	==> compile & craete artifacts
+		Docker_build		==> Dockerfile ==> docker build 
+	
+		docker images should be published to Docker Hub (docker Registry)
+
+		Using Kubernetes/swarm, pull the appln. image and deploy in target envi.
+		
+		Kubernetes Managed Services :
+
+			ECS, ECR,EKS - AWS 
+			ACS, ACR,AKS - Az
+			GKS - GCP
+
+		Create Dockerhub Access Token 
+
+docker login -u loksaieta
+
+
+	How to exec Multiple Containers
+	
+		3-tier ==> Microservice1,.........,100 
+
+			GUI		--> container1
+			Business_logic	--> container2
+			DBase		--> container3
+			
+	Docker Compose --> execute multiple containers.
+	Container Orchestration Tool :
+		To ensure high availability of the applications running in containers.
+	Docker Swarm --> Docker Containers
+	
+	Kubernetes ::
+	
+	How to Orchestrate the Containers
+
+	
+	Kubernetes :: 	==> Is a Open-Source Container Orchestration Tool
+	Features :
+	Architecture :
+	Install & Manage 
+
+
+	Kubernetes ::
+
+		Master / Slave Architecture 
 
 
 
 
+		Pods 
+			Replicas 
 
+	tomcat image used in docker ==> <external_ip>:8085
+		
+create 3 replicas of containers ==> in one server(replica of servers) 
 
+	Kubernetes Architecture :::
 
+		K8s Master :::	Is to schedule the pods and ensure that it is up and running as per desired state.
 
+			K8s WorkerNode1		
+			K8s WorkerNode2		
+			K8s WorkerNode3		
+			K8s WorkerNode4		
 
+	Installation of Kubernetes :::
 
+		Kubeadm ==> 
+	Pre-requisites::
 
+		K8s Master 		2 CPUs, 3 RAM
+			Cluster
+				K8s WorkerNode1		
+				K8s WorkerNode2				
 
+Summary :
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	Docker volumes,port-mapping,Build Images,.....
