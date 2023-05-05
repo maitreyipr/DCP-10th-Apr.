@@ -34,31 +34,7 @@ PATH=$PATH:$HOME/bin:$JAVA_HOME/bin
 
 source ~/.bash_profile
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-****************************************************************************************************
+**************************************************************************************************
 
 sudo apt update
 sudo apt install openjdk-11-jre -y
@@ -94,6 +70,8 @@ useradd -m -s /bin/bash devopsadmin
 su - devopsadmin
 
 ssh-keygen
+
+ssh-keygen -t rsa -b 4096 -m PEM
 
 ls ~/.ssh 
 
