@@ -96,8 +96,10 @@ chown -R devopsadmin /opt/tomcat
 
 
 Config. Target server in Jenkins:
-
+ In browser Manage of jenkin>> manage plugins>>available plugins>>search Publish over ssh plugin>> install it
 	Publish over ssh plugin.
+	
+	Go to Manage Jenkins>>congigure system>> Go down and add details of SSh server
 
 
 
