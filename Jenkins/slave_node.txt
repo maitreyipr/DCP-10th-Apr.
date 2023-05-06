@@ -13,6 +13,7 @@ sudo apt install openjdk-11-jre
 java -version
 
 sudo apt install maven -y
+mvn --version
 
 Adding a New User for Slave :
 
