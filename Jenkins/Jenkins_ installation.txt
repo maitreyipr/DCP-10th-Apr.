@@ -18,3 +18,7 @@ echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
 sudo apt-get update
 sudo apt-get install jenkins
 jenkins --version( to get jenkin version)
+
+Go to browser by public IP:8080
+  1.cd /var/lib/jenkins/secrets
+  2. ls--> cat initialAdministratorPassword--> copy it--> paste in browser
