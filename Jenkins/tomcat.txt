@@ -65,7 +65,7 @@ cd /opt/tomcat/bin
 
 Adding a New User for Tomcat :
 
-useradd -m -s /bin/bash devopsadmin
+useradd -m -s /bin/bash devopsadmin (if already user exist the do only su -devopsadmin)
 
 su - devopsadmin
 
