@@ -100,6 +100,31 @@ Config. Target server in Jenkins:
 	Publish over ssh plugin.
 	
 	Go to Manage Jenkins>>congigure system>> Go down and add details of SSh server
+	
+	SSH Server
+		Name: Name of instance in aws web console with who u need to connect in jensiks(QA_Server)
+		Hostname: enter private key of instance(172.31.43.92)
+		Username: devopsadmin(create the user in that qa_server machine)
+		Remote Directory:/opt/tomcat/webapps
+		
+click on Advanced
+	1.check on box of Use password authentication, or use a different key
+	2. Enter Passphrase / Password of user when u create username----if password forgot enter command----passwd devopsadmin---enter new password.(OR)
+	3. key--paste id_rsa
+	4. Apply changes
+	4. Test configuration
+	5. say success
+
+
+
+
+
+
+
+
+
+
+
 
 
 
