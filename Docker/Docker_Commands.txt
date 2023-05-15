@@ -22,7 +22,7 @@ docker pull centos
 
 
 docker run -it nginx
-docker exec -it <container_id>
+docker exec -it <container_id> bash--> to enter into container
 
 docker pull hello-world
 
