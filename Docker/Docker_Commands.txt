@@ -15,6 +15,8 @@ systemctl enable docker
 #goto : https://hub.docker.com/
 
 #Test Docker with basic hello-world image from docker hub.
+docker run -d tomcat(to run tomcat image in docker)
+docker ps
 
 docker run centos
 docker pull centos 
