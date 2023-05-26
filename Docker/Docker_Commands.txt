@@ -88,3 +88,23 @@ docker inspect <container_id>
 
 docker history <imagename>
 
+--------------------------------------------------
+push image in docker hub
+docker login(create the access token and generate it in docker hub security setting)
+in mobaxterm---docker login -u maitreyipramanik
+password--dckr_pat_DM-9wAgkX9qkM7LbbZzSgvnttCs
+
+wherever dockerFile is present go in that path
+docker build -t (username of docker)/name of image .
+e.g docker build -t maitreyipramanik/devopsedu .
+
+docker images(able to see the image)
+e.g maitreyipramanik/devopsedu
+--in docker hub go and create same name repository ---here it is devopedu
+in mobaxterm
+--docker push maitreyipramanik/devopsedu(image name of docker)
+
+[To push image of docker to repository of docker hub ...name should be same as image of docker and the repository name]
+
+
+
